@@ -125,3 +125,33 @@ body{
   }
 
 }
+
+@media only screen and (max-width: 425px) {
+
+  body{
+    font-size: 1rem;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .controls{
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .footer__text-wrapper{
+    width: 100%;
+  }
+
+  .footer__text-wrapper > p{
+    text-align: center;
+  }
+
+  .controls label{
+    width:15px;
+    height: 15px;
+  }
+
+}
