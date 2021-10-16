@@ -3,3 +3,81 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+.container > input{
+  display: none;
+}
+.container__slider {
+  overflow: hidden;
+  display: flex;
+}
+.slider > .img{
+  width: 100%;
+  position: relative;
+  transition: left 0.5s;
+  left: 0; 
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__text-wrapper {
+  width: 50%;
+  display: flex;
+  overflow: hidden;
+}
+
+.footer__text-wrapper > p{
+  min-width: 100%;
+  position: relative;
+  left: 0;
+  transition: 0.3s;
+}
+
+.controls{
+  display: flex;
+}
+
+.controls label{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background: transparent;
+  border: 1px solid blue;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.controls label:hover, 
+#first:checked ~ .footer > .controls > label:nth-child(1),
+#second:checked ~ .footer > .controls > label:nth-child(2),
+#third:checked ~ .footer > .controls > label:nth-child(3),
+#fourth:checked ~ .footer > .controls > label:nth-child(4){
+  background: blue;
+}
+
+
+
+#first:checked ~ .slider > .img, #first:checked ~ .footer > .footer__text-wrapper > p{
+  left: 0;
+}
+
+#second:checked ~ .slider > .img, #second:checked ~ .footer > .footer__text-wrapper > p{
+  left: -100%
+}
+
+#third:checked ~ .slider > .img, #third:checked ~ .footer > .footer__text-wrapper > p{
+  left: -200%
+}
+
+#fourth:checked ~ .slider > .img, #fourth:checked ~ .footer > .footer__text-wrapper > p{
+  left: -300%
+}
+
