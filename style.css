@@ -95,3 +95,33 @@ body{
 #fourth:checked ~ .slider > .img, #fourth:checked ~ .footer > .footer__text-wrapper > p{
   left: -300%
 }
+
+@media only screen and (max-width: 768px) {
+
+  body{
+    font-size: 1.8rem;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .controls{
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .footer__text-wrapper{
+    width: 100%;
+  }
+
+  .footer__text-wrapper > p{
+    text-align: center;
+  }
+
+  .controls label{
+    width:25px;
+    height: 25px;
+  }
+
+}
