@@ -1,0 +1,161 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: rgb(61, 61, 61);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 5% auto;
+}
+.container > input{
+  display: none;
+}
+.container__slider {
+  overflow: hidden;
+  display: flex;
+  border-radius: 30px;
+}
+.slider > .img{
+  width: 100%;
+  position: relative;
+  transition: left 0.5s;
+  left: 0; 
+}
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__text-wrapper {
+  width: 50%;
+  display: flex;
+  overflow: hidden;
+}
+
+.footer__text-wrapper > p{
+  min-width: 100%;
+  position: relative;
+  left: 0;
+  transition: 0.3s;
+}
+
+.controls{
+  display: flex;
+}
+
+.controls label{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background: transparent;
+  background: rgb(37, 160, 231);
+  border: 3px solid rgb(37, 160, 231);
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.controls label:hover{
+  background: white;
+  border: 3px solid white;
+}
+
+#first:checked ~ .footer > .controls > label:nth-child(1),
+#second:checked ~ .footer > .controls > label:nth-child(2),
+#third:checked ~ .footer > .controls > label:nth-child(3),
+#fourth:checked ~ .footer > .controls > label:nth-child(4){
+  background: transparent;
+  border: 3px solid white;
+}
+
+.controls label:active{
+  border: 3px solid rgb(196, 194, 194);
+  background: rgb(196, 194, 194);
+}
+
+#first:checked ~ .slider > .img, #first:checked ~ .footer > .footer__text-wrapper > p{
+  left: 0;
+}
+
+#second:checked ~ .slider > .img, #second:checked ~ .footer > .footer__text-wrapper > p{
+  left: -100%
+}
+
+#third:checked ~ .slider > .img, #third:checked ~ .footer > .footer__text-wrapper > p{
+  left: -200%
+}
+
+#fourth:checked ~ .slider > .img, #fourth:checked ~ .footer > .footer__text-wrapper > p{
+  left: -300%
+}
+
+@media only screen and (max-width: 768px) {
+
+  body{
+    font-size: 1.8rem;
+  }
+
+  .container{
+    max-width: 90%;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .controls{
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .footer__text-wrapper{
+    width: 100%;
+  }
+
+  .footer__text-wrapper > p{
+    text-align: center;
+  }
+
+  .controls label{
+    width:25px;
+    height: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+  body{
+    font-size: 1rem;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .controls{
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .footer__text-wrapper{
+    width: 100%;
+  }
+
+  .footer__text-wrapper > p{
+    text-align: center;
+  }
+
+  .controls label{
+    width:15px;
+    height: 15px;
+  }
+
+}
